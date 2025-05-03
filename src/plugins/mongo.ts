@@ -17,10 +17,10 @@ export default fp(async (fastify: FastifyInstance) => {
 
   try {
     await client.connect();
-    fastify.log.info("MongoDB connected");
+    // fastify.log.info("MongoDB connected");
     fastify.decorate("mongo", client.db());
   } catch (err) {
-    fastify.log.error("Failed to connect to MongoDB", err);
+    // fastify.log.error("Failed to connect to MongoDB", err);
     process.exit(1);
   }
 });
