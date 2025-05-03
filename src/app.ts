@@ -6,6 +6,10 @@ import userRoutes from "./routes/user.routes.js";
 
 const app = Fastify({ logger: true });
 
+app.get("/", async () => {
+  return { status: "OK", message: "Welcome to Fastify!" };
+});
+
 app.register(swagger);
 app.register(envPlugin);
 app.register(mongoPlugin);
