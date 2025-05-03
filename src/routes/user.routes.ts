@@ -6,7 +6,7 @@ import {
   getUserById,
   updateUserById,
   deleteUserById,
-} from "../services/user.service";
+} from "../services/user.service.js";
 
 export default async function userRoutes(fastify: FastifyInstance) {
   fastify.get(

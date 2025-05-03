@@ -1,6 +1,6 @@
 // src/services/user.service.ts
 import { FastifyInstance } from "fastify";
-import { User, createUser } from "../models/user.model";
+import { User, createUser } from "../models/user.model.js";
 import { ObjectId } from "mongodb";
 
 export const createNewUser = async (

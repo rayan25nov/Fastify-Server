@@ -1,7 +1,7 @@
 import Fastify from "fastify";
-import envPlugin from "./plugins/env";
-import mongoPlugin from "./plugins/mongo";
-import swagger from "./plugins/swagger";
+import envPlugin from "./plugins/env.js";
+import mongoPlugin from "./plugins/mongo.js";
+import swagger from "./plugins/swagger.js";
 import userRoutes from "./routes/user.routes.js";
 
 const app = Fastify({ logger: true });
