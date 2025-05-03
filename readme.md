@@ -1,34 +1,55 @@
-# Fastify Server Project
+# Fastify Server Project 🚀
 
-This project is a server application built using Fastify and pnpm. It is designed to provide a robust and scalable API with various endpoints for user management.
+![Fastify](https://img.shields.io/badge/Fastify-v4.x-blue?style=flat-square) ![TypeScript](https://img.shields.io/badge/TypeScript-v5.x-blue?style=flat-square) ![pnpm](https://img.shields.io/badge/pnpm-v8.x-orange?style=flat-square) ![License](https://img.shields.io/badge/License-ISC-green?style=flat-square)
+
+This project is a server application built using **Fastify** and **pnpm**. It is designed to provide a robust and scalable API with various endpoints for user management.
+
+---
+
+## 📚 Table of Contents
+
+- [📚 Table of Contents](#-table-of-contents)
+- [📁 Folder Structure](#-folder-structure)
+- [🔍 What Each Folder Does](#-what-each-folder-does)
+- [🛠️ Getting Started](#️-getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Start the Development Server](#start-the-development-server)
+- [📜 Available Scripts](#-available-scripts)
+- [👥 Contributors](#-contributors)
+- [📄 License](#-license)
+
+---
 
 ## 📁 Folder Structure
 
 ```
 └── 📁fastify
-    └── 📁src
-        └── app.ts
-        └── index.ts
-        └── 📁models
-            └── user.model.ts
-        └── 📁plugins
-            └── env.ts
-            └── mongo.ts
-            └── swagger.ts
-        └── 📁routes
-            └── user.routes.ts
-        └── 📁services
-            └── user.service.ts
-        └── 📁types
-            └── env.d.ts
-            └── mongo.d.ts
-    └── .env
-    └── .gitignore
-    └── package.json
-    └── pnpm-lock.yaml
-    └── readme.md
-    └── tsconfig.json
+        └── 📁src
+                └── app.ts
+                └── index.ts
+                └── 📁models
+                        └── user.model.ts
+                └── 📁plugins
+                        └── env.ts
+                        └── mongo.ts
+                        └── swagger.ts
+                └── 📁routes
+                        └── user.routes.ts
+                └── 📁services
+                        └── user.service.ts
+                └── 📁types
+                        └── env.d.ts
+                        └── mongo.d.ts
+        └── .env
+        └── .gitignore
+        └── package.json
+        └── pnpm-lock.yaml
+        └── readme.md
+        └── tsconfig.json
 ```
+
+---
 
 ## 🔍 What Each Folder Does
 
@@ -42,20 +63,22 @@ This project is a server application built using Fastify and pnpm. It is designe
 | `index.ts`  | Entry point of the application: imports and registers all routes and plugins, and starts the server. |
 | `app.ts`    | Sets up and configures the Fastify instance, making it ready for testing or deployment.              |
 
+---
+
 ## 🛠️ Getting Started
 
 ### Prerequisites
 
-- Node.js
-- pnpm
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- [pnpm](https://pnpm.io/) (v8 or higher)
 
 ### Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
-   cd fastify
+   git clone https://github.com/rayan25nov/Fastify-Server.git
+   cd Fastify-Server
    ```
 
 2. Install dependencies:
@@ -64,36 +87,45 @@ This project is a server application built using Fastify and pnpm. It is designe
    pnpm install
    ```
 
-3. Set up environment variables by creating a `.env` file based on the provided `.env.example`.
+3. Create a `.env` file in the root directory with the following content:
 
-### Development
+   ```env
+   PORT="8080"
+   MONGO_URI="mongodb://localhost:27017/user"
+   ```
 
-Run the server in development mode:
+---
+
+### Start the Development Server
+
+Run the following command to start the server in development mode with hot-reloading enabled:
 
 ```bash
 pnpm dev
 ```
 
-### Building
+---
 
-Compile TypeScript to JavaScript:
+## 📜 Available Scripts
 
-```bash
-pnpm build
-```
+| Script            | Description                                                                        |
+| ----------------- | ---------------------------------------------------------------------------------- |
+| `pnpm build`      | Compiles the TypeScript code into JavaScript.                                      |
+| `pnpm start`      | Starts the server using the compiled JavaScript files.                             |
+| `pnpm dev`        | Runs the server in development mode with TypeScript compilation and hot-reloading. |
+| `pnpm test`       | Runs the test suite using Jest.                                                    |
+| `pnpm test:watch` | Runs the tests in watch mode for continuous testing during development.            |
 
-### Running Tests
-
-Execute unit tests:
-
-```bash
-pnpm test
-```
-
-## 📜 License
-
-[ISC License](LICENSE)
+---
 
 ## 👥 Contributors
 
-- [Contributor Name](https://github.com/username)
+- [Rayan Ahmad](https://github.com/rayan25nov)
+
+---
+
+## 📄 License
+
+This project is licensed under the [ISC License](./LICENSE).
+
+---
