@@ -6,6 +6,7 @@ declare module "fastify" {
     config: {
       PORT: string;
       MONGO_URI: string;
+      BASE_URL: string;
     };
   }
 }

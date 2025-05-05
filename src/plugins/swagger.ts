@@ -2,12 +2,17 @@ import fp from "fastify-plugin";
 import fastifySwagger from "@fastify/swagger";
 import fastifySwaggerUI from "@fastify/swagger-ui";
 import { FastifyInstance } from "fastify";
+import fs from "fs";
+import path from "path";
 
 export default fp(async (fastify: FastifyInstance) => {
-  // Enable CORS for Swagger endpoints (if not already done in app.ts)
-  // fastify.register(require('@fastify/cors'), { origin: '*' });
+  // Determine path to your SVG logo using project root
+  const logoPath = path.join(process.cwd(), "src", "assets", "logo.svg");
+  // Read and base64-encode your SVG logo
+  const svgBuffer = fs.readFileSync(logoPath);
+  const svgBase64 = svgBuffer.toString("base64");
 
-  // Register OpenAPI (Swagger) specification
+  // Register OpenAPI (Swagger) spec
   await fastify.register(fastifySwagger, {
     openapi: {
       info: {
@@ -17,14 +22,13 @@ export default fp(async (fastify: FastifyInstance) => {
       },
       servers: [
         {
-          url:
-            process.env.BASE_URL || "https://fastify-server-seven.vercel.app",
+          url: process.env.BASE_URL!,
         },
       ],
     },
   });
 
-  // Register Swagger UI at /docs
+  // Register Swagger UI with custom favicon and header logo
   await fastify.register(fastifySwaggerUI, {
     routePrefix: "/docs",
     uiConfig: {
@@ -33,5 +37,20 @@ export default fp(async (fastify: FastifyInstance) => {
     },
     staticCSP: true,
     transformStaticCSP: (header) => header,
+    theme: {
+      favicon: [
+        {
+          filename: "logo.svg",
+          rel: "icon",
+          sizes: "any",
+          type: "image/svg+xml",
+          content: Buffer.from(svgBase64, "base64"),
+        },
+      ],
+    },
+    logo: {
+      type: "image/svg+xml",
+      content: Buffer.from(svgBase64, "base64"),
+    },
   });
 });

@@ -16,8 +16,8 @@ app.get("/", async () => {
   return { status: "OK", message: "Welcome to Fastify!" };
 });
 
-app.register(swagger);
 app.register(envPlugin);
+app.register(swagger);
 app.register(mongoPlugin);
 app.register(userRoutes);
 

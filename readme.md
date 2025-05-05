@@ -16,6 +16,7 @@ This project is a server application built using **Fastify** and **pnpm**. It is
   - [Installation](#installation)
   - [Start the Development Server](#start-the-development-server)
 - [📜 Available Scripts](#-available-scripts)
+- [🚀 Deployments](#-deployments-to-vercel)
 - [👥 Contributors](#-contributors)
 - [📄 License](#-license)
 
@@ -25,28 +26,34 @@ This project is a server application built using **Fastify** and **pnpm**. It is
 
 ```
 └── 📁fastify
-        └── 📁src
-                └── app.ts
-                └── index.ts
-                └── 📁models
-                        └── user.model.ts
-                └── 📁plugins
-                        └── env.ts
-                        └── mongo.ts
-                        └── swagger.ts
-                └── 📁routes
-                        └── user.routes.ts
-                └── 📁services
-                        └── user.service.ts
-                └── 📁types
-                        └── env.d.ts
-                        └── mongo.d.ts
-        └── .env
-        └── .gitignore
-        └── package.json
-        └── pnpm-lock.yaml
-        └── readme.md
-        └── tsconfig.json
+    └── 📁api
+        └── index.js
+    └── 📁src
+        └── app.ts
+        └── 📁assets
+            └── logo.svg
+        └── index.ts
+        └── 📁models
+            └── user.model.ts
+        └── 📁plugins
+            └── env.ts
+            └── mongo.ts
+            └── swagger.ts
+        └── 📁routes
+            └── user.routes.ts
+        └── 📁services
+            └── user.service.ts
+        └── 📁types
+            └── env.d.ts
+            └── mongo.d.ts
+    └── .env
+    └── .gitignore
+    └── LICENSE
+    └── package.json
+    └── pnpm-lock.yaml
+    └── readme.md
+    └── tsconfig.json
+    └── vercel.json
 ```
 
 ---
@@ -92,6 +99,7 @@ This project is a server application built using **Fastify** and **pnpm**. It is
    ```env
    PORT="8080"
    MONGO_URI="mongodb://localhost:27017/user"
+   BASE_URL="http://localhost:8080"
    ```
 
 ---
@@ -115,6 +123,12 @@ pnpm dev
 | `pnpm dev`        | Runs the server in development mode with TypeScript compilation and hot-reloading. |
 | `pnpm test`       | Runs the test suite using Jest.                                                    |
 | `pnpm test:watch` | Runs the tests in watch mode for continuous testing during development.            |
+
+---
+
+## 🚀 Deployments to Vercel
+
+This project is deployed to [Vercel](https://vercel.com/) using a serverless function. The serverless function is defined in `api/index.js`, and the deployment configuration is specified in `vercel.json`.
 
 ---
 
