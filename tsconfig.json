@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "NodeNext",
-    "outDir": "./public",
+    "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
@@ -14,6 +14,6 @@
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true
   },
-  "include": ["src/**/*.ts", "src/types/**/*.ts", "src/api/**/*.ts"],
-  "exclude": ["node_modules", "public"]
+  "include": ["src/**/*.ts", "src/types/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
